@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\HotelReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/hotel_list', [HotelController::class,'index']);
+Route::post('/reviews_create', [HotelReviewController::class,'store']);
+Route::get('/review/{id}', [HotelReviewController::class,'show']);
