@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/hotel_list', [HotelController::class,'index']);
+Route::get('/hotel_by_id/{id}', [HotelController::class,'getHotelById']);
 Route::post('/reviews_create', [HotelReviewController::class,'store']);
-Route::get('/review/{id}', [HotelReviewController::class,'show']);

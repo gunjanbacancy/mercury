@@ -13,7 +13,6 @@ class HotelReviewController extends BaseController
     public function store(Request $request)
     {
         $input = $request->all();
-        //dd($input);
         $validator = Validator::make($input, [
             'hotel_id' => 'required|numeric',
             'title' => 'required|string',
@@ -33,7 +32,6 @@ class HotelReviewController extends BaseController
     public function show($id)
     {   
         $data = Hotel::with('hotelsReviews')->find($id);
-        //dd($data);
         if (is_null($data)) {
             return $this->sendError('Unable to found hotel');
         }

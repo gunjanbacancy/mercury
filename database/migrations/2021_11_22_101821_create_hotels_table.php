@@ -18,7 +18,7 @@ class CreateHotelsTable extends Migration
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->string('supplier')->nullable();
-            $table->string('star')->default('0')->nullable();
+            $table->integer('star')->default('0');
             $table->tinyInteger('status')->default('1')->comment('1:Active,0:Inactive');
             $table->timestamps();
         });
